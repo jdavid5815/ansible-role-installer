@@ -10,7 +10,7 @@ There a no specific requirements. If the package you want to install is not in t
 
 There is exactly one variable that must be specified in your playbook: 'packages'. This variable must contain at least one hash, specifying a package name and a boolean which is used to determine if a service needs to be enabled and started (true, if not: false). Example:
 
-```
+```yaml
 vars:
   packages:
     docker: true
@@ -20,7 +20,7 @@ The key of the hash value (docker in the example above), must also be defined in
 
 Example:
 
-```
+```yaml
 mappings:
   docker:
     package: "{% if ansible_os_family == 'RedHat' %}docker{% elif ansible_os_family=='Debian' %}docker.io{% else %}docker{% endif %}"
