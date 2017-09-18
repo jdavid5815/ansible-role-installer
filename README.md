@@ -10,9 +10,9 @@ There a no specific requirements. If the package you want to install is not in t
 
 There is exactly one variable that must be specified in your playbook: 'packages'. This variable must contain at least one hash, specifying a package name and a boolean which is used to determine if a service needs to be enabled and started (true, if not: false). Example:
 
-`vars:`
-  `packages:`
-    `docker: true`
+`vars:
+   packages:
+     docker: true`
 
 The key of the hash value (docker in the example above), must also be defined in the "defaults/main.yml" yaml file, where it is used to map the "chosen" package name, to the actual, os-dependant package and service name.
 
