@@ -1,0 +1,45 @@
+# Defined packages:
+#
+# apache
+# docker
+# facter
+# ksh
+# lsscsi
+# ntp
+# psmisc
+# python-keyczar
+#
+# Add to this list as you see fit. The syntax is:
+#
+#  generic-package-name:
+#    package: os-specific-name
+#    service: os-specific-service-name
+#
+# 2017-09-14
+---
+mappings:
+  apache:
+    package: "{% if ansible_os_family == 'RedHat' %}httpd{% elif ansible_os_family=='Debian' %}apache2{% else %}apache{% endif %}"
+    service: "{% if ansible_os_family == 'RedHat' %}httpd{% elif ansible_os_family=='Debian' %}apache2{% else %}apache{% endif %}"
+  docker:
+    package: "{% if ansible_os_family == 'RedHat' %}docker{% elif ansible_os_family=='Debian' %}docker.io{% else %}docker{% endif %}"
+    service: "{% if ansible_os_family == 'RedHat' %}docker{% elif ansible_os_family=='Debian' %}docker{% else %}docker{% endif %}"
+  facter:
+    package: facter
+    service: facter
+  ntp:
+    package: ntp
+    service: "{% if ansible_os_family == 'RedHat' %}ntpd{% elif ansible_os_family=='Debian' %}ntp{% else %}ntp{% endif %}"
+  ksh:
+    package: ksh
+    service: ksh
+  lsscsi:
+    package: lsscsi
+    service: lsscsi
+  psmisc:
+    package: psmisc
+    service: psmisc
+  python-keyczar:
+    package: python-keyczar
+    service: python-keyczar
+...
