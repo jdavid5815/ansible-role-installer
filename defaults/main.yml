@@ -17,7 +17,7 @@
 #
 # 2017-09-14
 ---
-mappings:
+installer_mappings:
   apache:
     package: "{% if ansible_os_family == 'RedHat' %}httpd{% elif ansible_os_family=='Debian' %}apache2{% else %}apache{% endif %}"
     service: "{% if ansible_os_family == 'RedHat' %}httpd{% elif ansible_os_family=='Debian' %}apache2{% else %}apache{% endif %}"

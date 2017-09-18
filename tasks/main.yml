@@ -1,12 +1,12 @@
 ---
   # Packages to be installed on all *nix flavors.
   - name: Install a set of packages on different Unix/Linux flavors.
-    package: name={{ mappings[item.key].package }} state=present
+    package: name={{ installer_mappings[item.key].package }} state=present
     with_dict: "{{ packages }}"
 
   # Services to be started on all *nix flavors.
   - name: Enable and start a service on different Unix/Linux flavors.
-    service: name={{ mappings[item.key].service }} state=started enabled=yes
+    service: name={{ installer_mappings[item.key].service }} state=started enabled=yes
     when: item.value
     with_dict: "{{ packages }}"
 ...

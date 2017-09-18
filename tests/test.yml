@@ -2,7 +2,7 @@
 - hosts: localhost
   remote_user: root
   vars:
-    packages:
+    installer_packages:
       ntp: false
   roles:
     - installer
