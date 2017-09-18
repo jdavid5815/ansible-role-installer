@@ -3,6 +3,6 @@
   remote_user: root
   vars:
     installer_packages:
-      ntp: false
+      ntp: true
   roles:
     - installer
