@@ -42,4 +42,7 @@ installer_mappings:
   python-keyczar:
     package: python-keyczar
     service: python-keyczar
+  vim:
+    package: vim
+    service: vim
 ...
